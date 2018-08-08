@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Login</title>
+  </head>
+  <body>
+    <form id="lg">
+      <h3>Username: <input type="text"></h3>
+      <h3>Password: <input type="password"></h3>
+    </form>
+    <button onclick="login()"> Login </button>    
+  </body>
+</html>
+<script>
+  function login() 
+  {
+    var arr = [['username1','password1'],['username2','password2']];
+    var username = document.getElementById("lg").elements[0].value;
+    var pass = document.getElementById("lg").elements[1].value;
+    var count = 0;
+
+    for(var i=0; i<arr.length; i++)
+    {
+      if(arr[i][0] == username)
+      {
+        if(arr[i][1] == pass)
+        {          
+          count++;
+        }
+      }
+    }
+    if(count>0)
+    {
+      alert('login sukses!');
+    }
+    else
+    {
+      alert('login gagal!');
+    }
+  }
+</script>
+    

@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Countdown</title>
+  </head>
+  <body onload="count()">
+    <center>
+      <h1>Countdown</h1>
+      <h3 id="count"></h3>
+    </center>   
+  </body>
+</html>
+<script>
+  function count()
+  {
+    var sec = prompt('masukkan detik!');
+    var start = setInterval(str,1000);
+    function str()
+    {         
+      var h,m,s;
+      var sisa;
+      h = Math.floor(sec/3600);
+      sisa = sec - (3600*h);
+      m = Math.floor(sisa/60);
+      s = sisa - (60*m);
+
+      document.getElementById("count").innerHTML = h +' Jam '+ m +' menit ' + s + ' detik ';
+      console.log(h + ' ' + m+ ' ' +s);
+      sec--;
+
+      if(sec<0 && h == 0 && m==0)
+      {
+          clearInterval(start);
+      }        
+    }
+  } 
+  
+</script>
